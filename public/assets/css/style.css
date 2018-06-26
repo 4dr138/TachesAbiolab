@@ -1,0 +1,14 @@
+.jumbotron
+{
+    padding:0;
+    text-align:center;
+    font-size: 70%;
+}
+.mainTitle, form, .flash-notice
+{
+    text-align:center;
+}
+.mainTitle
+{
+    margin-bottom: 5%;
+}

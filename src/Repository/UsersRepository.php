@@ -19,6 +19,33 @@ class UsersRepository extends ServiceEntityRepository
         parent::__construct($registry, Users::class);
     }
 
+    public function checkUserMail($mail)
+    {
+
+        $em = $this->getEntityManager();
+        $query = $em->createQuery('
+        SELECT u.id
+        FROM App\Entity\Users u
+        WHERE u.mail = :mail 
+        ')
+            ->setParameter('mail', $mail);
+
+        return $query->execute();
+    }
+
+    public function checkUserPass($pass)
+    {
+        $em = $this->getEntityManager();
+        $query = $em->createQuery('
+        SELECT u.id
+        FROM App\Entity\Users u
+        WHERE u.password = :pass 
+        ')
+            ->setParameter('pass', $pass);
+
+        return $query->execute();
+    }
+
 //    /**
 //     * @return Users[] Returns an array of Users objects
 //     */

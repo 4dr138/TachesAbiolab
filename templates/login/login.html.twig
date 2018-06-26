@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Identification{% endblock %}
+
+{% block body %}
+    <div class = 'container'>
+        <div class = 'row'>
+            <div class = 'col-lg-4'></div>
+            <div class = 'col-lg-4'>
+                <h1 class = 'mainTitle'>Connexion</h1>
+                {{ form(form) }}
+                {% for message in app.flashes('error') %}
+                    <div class="flash-notice">
+                        <strong>{{ message }} </strong>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class = 'col-lg-4'></div>
+        </div>
+    </div>
+{% endblock %}
